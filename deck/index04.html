@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <!--[if gte IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]--> 
+    <!--[if lt IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" /><![endif]--> 
+<meta charset="utf-8" />
+    <title>My Very Own Slide Deck</title>
+<!--
+Made by: Put Your Name Here
+Copyright:  CC-SA-NC-BY - Creative Commons Attribution-NonCommercial-ShareAlike
+Based on: http://estelle.github.com/slides 
+-->    
+
+<style>
+/* Put all of your CSS here */
+
+:root { font-size: 162.5%;  }
+
+h1    { font-size:1.8rem;   }
+
+pre   { font-size: 1.5rem;  }
+ 
+p     { font-size: 1.5rem;
+        margin: 1rem 0 0 0; }
+		
+body,
+#presentation {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px; 
+  top: 0px;
+  font-family: sans-serif;
+}
+
+#presentation {
+  overflow: hidden;
+  background-color: #000;
+  background-image: 
+    linear-gradient(#b8c6df,#6d88b7);
+}
+
+.slide {
+  width: 900px;
+  height: 700px;
+  background-color: #efefef; 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+    margin-top: -350px;
+    margin-left: -450px;
+    display: none; 
+    overflow: hidden;
+	padding: 20px;
+    display: none;
+	border-radius: 50px 0;
+	border: 5px solid #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6), 
+              inset 0 0 6px rgba(0,0,0,0.4);
+  box-sizing: border-box;   
+}
+.slide:nth-of-type(odd) {
+	border-radius: 0 50px;
+}
+.past, .current, .future {
+    display: block;   
+}
+
+.slide.past     {margin-left: -1400px;}
+.slide.current  {margin-left: -450px;}
+.slide.future   {margin-left: 500px;}
+pre {background-color: #fff;}
+</style>
+</head>
+
+<body> 
+<div id="presentation">
+   <div id="slides">
+   
+   
+   
+   <!-- slide -->
+   <div class="slide normal"> 
+     <header>
+     	<h1>We're going to Make a Slide Deck</h1>
+        <h2>Because CSS is Awesome</h2>
+     </header> 
+     <section> 
+     </section>
+   </div>
+   
+   
+      <!-- slide -->
+   <div class="slide normal"> 
+     <header><h1>The HTML</h1></header> 
+     <section>
+     <pre contenteditable>&lt;div id=&quot;<strong>presentation</strong>&quot;&gt;
+&lt;div id=&quot;<strong>slides</strong>&quot;&gt;
+ &lt;!-- slide --&gt;
+  &lt;div class=&quot;<strong>slide</strong> <i><strong>normal</strong></i>&quot;&gt; 
+    &lt;header&gt;&lt;h1&gt;Slide Header&lt;/h1&gt;&lt;/header&gt;
+    &lt;section&gt;
+      &lt;pre contenteditable&gt;some code&lt;/pre&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;prefixfree.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;slides.js&quot;&gt;&lt;/script&gt;</pre>
+     </section>
+   </div>
+   
+
+<div class="slide normal"> 
+<header><h1>Give the slide deck breathing room</h1></header> 
+<section class="content"> 
+<pre contenteditable>body,
+#presentation {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px; 
+  top: 0px;
+}
+
+#presentation {
+  overflow: hidden;
+}
+</pre>
+</section>
+</div> 
+ 
+  
+
+
+
+<div class="slide normal"> 
+<header><h1>Center the slide on the page</h1></header> 
+<section class="content"> 
+<pre contenteditable>.slide {
+  width: 900px;
+  height: 700px;
+  background-color: #efefef; }</pre>
+<p>Refresh</p>
+<pre contenteditable>.slide {
+  position: absolute;
+  left: 50%;
+  top: 50%;}</pre>
+    
+<p>Refresh</p>
+ </section>
+   </div>
+   
+
+<div class="slide normal"> 
+<header><h1>Center the slide on the page</h1></header> 
+<section class="content"> 
+<pre contenteditable>.slide {
+    margin-top: -350px;
+    margin-left: -450px;
+}</pre>
+<p>Refresh</p>
+ </section>
+   </div>
+   
+
+<div class="slide normal"> 
+<header><h1>sooooo ugly</h1>
+<p>add some prettiness and refresh again</p>
+<pre contenteditable>.slide {
+    padding: 20px;
+} 
+body {
+    font-family: sans-serif;
+}</pre>
+</section>
+</div> 
+
+
+ <div class="slide normal"> 
+<header><h1>Slide location (class set with JS)</h1></header> 
+<section class="content"> 
+<pre contenteditable>
+.slide {
+  display: none; 
+  overflow: hidden;
+}
+.past, .current, .future {
+  display: block;   
+}
+.slide.past    { margin-left: -1400px;}
+.slide.current { margin-left: -450px;}
+.slide.future  { margin-left: 500px;}
+</pre>
+</section>
+</div> 
+ 
+ <div class="slide normal"> 
+<header><h1>Refresh</h1></header> 
+<section class="content"> <p>The slide deck now works, but it's ugly, and the transitions suck!</p>
+</section>
+</div> 
+ 
+ 
+<div class="slide normal"> 
+<header><h1>Rounded Corners</h1></header> 
+<section class="content">
+<p>Border Properties: <a href="http://estelle.github.com/html5mobile/part_08_backgrounds.html#slide27" target="lesson">border-radius</a> </p>
+<pre contenteditable>.slide {
+	border-radius: 50px;
+}</pre>
+<p>Can we use selectors to give different slides different corners?</p>
+</section>
+</div>
+
+<div class="slide normal"> 
+<header><h1>Rounded corners</h1></header> 
+<section class="content"> 
+<pre contenteditable>
+.slide {
+	border-radius: 50px 0;
+}
+.slide:nth-of-type(odd) {
+	border-radius: 0 50px;
+}
+</pre>
+</section>
+</div> 
+
+<div class="slide normal"> 
+<header><h1>Spiffier Borders with Shadows</h1></header> 
+<section class="content"> 
+<pre contenteditable>
+#presentation {
+  background-color: #000;  
+}
+</pre>
+
+<p><a href="http://estelle.github.com/html5mobile/part_07_fonts.html#slide8" target="lesson">Shadows</a>: <a href="http://estelle.github.com/html5mobile/part_07_fonts.html#slide13" target="lesson">box-shadows</a></p>
+<pre contenteditable>
+.slide {
+  border: 5px solid #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6), 
+              inset 0 0 6px rgba(0,0,0,0.4);
+}</pre>
+</section>
+</div>
+
+<div class="slide normal"> 
+<header><h1>Box Model Gotcha!</h1></header> 
+<section class="content">
+<p><a href="http://estelle.github.com/html5mobile/part_12_features.html#slide4">Box Sizing</a></p> 
+<pre contenteditable>
+.slide {
+  box-sizing: border-box;   
+}</pre>
+</section>
+</div>
+
+<div class="slide normal"> 
+<header><h1>Default font sizes?</h1></header> 
+<section class="content">
+<p>Font-size: <a href="http://estelle.github.com/html5mobile/part_12_features.html#slide14">rem units</a></p>
+<pre contenteditable>
+:root { font-size: 162.5%;  }
+
+h1    { font-size:1.8rem;   }
+
+pre   { font-size: 1.5rem;  }
+ 
+p     { font-size: 1.5rem;
+        margin: 1rem 0 0 0; }
+</pre>
+</section>
+</div> 
+
+<div class="slide normal"> 
+<header><h1>Boring Background?</h1></header> 
+<section class="content">
+<p><a href="http://estelle.github.com/gradients" class="lesson">Gradients</a> 
+<pre contenteditable>
+#presentation {
+  background-image: 
+    linear-gradient(#b8c6df,#6d88b7);
+  background-image: 
+    linear-gradient(to bottom, 
+                    #b8c6df 0%,
+                    #6d88b7 100%);
+}
+</pre>
+</section>
+</div> 
+
+
+<div class="slide normal"> 
+<section class="content"> 
+<pre contenteditable style="font-size:1rem"><strong>background-image: </strong>
+ linear-gradient(left, rgba(0,0,0,0.2) 50%, transparent 50%),
+ linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
+ linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
+ linear-gradient(left, transparent 50%, rgba(0,0,0,0.2) 50%),
+ linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
+ linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
+ linear-gradient(left, transparent 50%, rgba(0,0,0,0.2) 50%),
+ linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
+ linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
+ linear-gradient(left,
+      red 14%, 
+      orange 15%, orange 28%, 
+      yellow 29%, yellow 42%, 
+      green 43%, green 56%, 
+      blue 57%, blue 70%, 
+      magenta 71%, magenta 85%, 
+      purple 86%);
+ <strong>background-size: </strong>
+      1px 50%, 
+      1px 50px, 
+      32px, 120px, 
+      80px, 60px, 
+      90px, 110px, 
+      70px, 500px;
+}</pre>
+</section>
+</div> 
+ 
+  
+
+ 
+  
+<div class="slide normal"> 
+<header><h1>Sexier slide transitions</h1></header> 
+<section class="content">
+<p><a href="http://estelle.github.com/html5mobile/part_11_animations.html#slide2">Transition</a> properties</p> 
+<pre contenteditable>.slides {transition: 1s;}</pre>
+<pre contenteditable>
+.slide            {opacity: 0.5;}
+.slide.far-past   {margin-left: -2400px;}
+.slide.past       {margin-left: -1400px;}
+.slide.current    {margin-left: -450px; 
+                   opacity: 1;}
+.slide.future     {margin-left: 500px;}
+.slide.far-future {margin-left: 1500px;}
+</pre>
+<pre contenteditable>.slides {transition: margin-left 1s, 
+         opacity 2s;}</pre>
+</section>
+</div> 
+
+
+<div class="slide normal"> 
+<header><h1>Transforms</h1></header> 
+<section class="content">
+<p><a href="http://estelle.github.com/html5mobile/part_10_transforms.html#slide2" target="lesson">Transforms</a></p> 
+<pre contenteditable>.slide {transform: scale(0.8);
+       transition: 
+          margin-left 1s, 
+          transform 1s,
+          opacity 2s;}</pre>
+<pre contenteditable>.slide.current    {transform: scale(1);}
+</pre>
+<pre contenteditable>.slide {transition: all 1.2s linear;}</pre>
+</section>
+</div> 
+
+
+ 
+  
+
+ 
+  
+ 
+ 
+  
+
+ 
+  
+ 
+ 
+  
+
+  
+ 
+
+  
+
+
+
+
+   
+   </div>
+</div>
+<script src="../prefixfree.js"></script>
+<script src="../slides.js"></script>
+</body>
+</html>

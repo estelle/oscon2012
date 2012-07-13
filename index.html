@@ -182,10 +182,10 @@ background-image:
 	margin-top: 200px;
 }
 .content {
-	font-size: 2rem;
+	font-size: 1.2rem;
 }
 .content input, button {
-	font-size: 2rem;
+	font-size: 1.2rem;
 }
 .slide textarea.mynotes {
 		-webkit-appearance: none;
@@ -222,7 +222,7 @@ background-image:
 	text-align: center;
 }
 .slide p{
-	font-size: 2rem;
+	font-size: 1.2rem;
 }
 .slide .counter {
 	color: #999999;
@@ -276,11 +276,11 @@ header {
 	font-size: 2rem;
 }
 h1 {
-	font-size:1.8rem;
+	font-size:1.6rem;
 	margin-bottom: 0px;
 }
 h2 {
-	font-size: 1.9rem;
+	font-size: 1.3rem;
 }
 h1:first-child {
 	margin-top: 0;
@@ -300,13 +300,15 @@ a {
 	display: inline-block;
 	text-decoration: none;
 	line-height: 110%;
+	color: #a00;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3), -1px -1px 1px white;
 }
 a:hover {
 	text-decoration: underline;
 }
 pre {
 	text-align: left;
-	font-size: 0.8rem;
+	font-size: 1.2rem;
 	padding: 10px 20px;
 	background: rgba(255,255,255, 0.5);
 	-moz-border-radius: 8px;
@@ -389,7 +391,53 @@ div.example {
 .slide.object {padding:0;}
 .object object {width: 100%; height: 100%;}
 .notes, .temphidden {display: none;}
+.intro h1 {font-size: 2rem; letter-spacing: 1px;}
+.specificity li {
+	display: inline-block;
+	width: 200px;
+	padding-bottom: 180px;
+	background-position: 50% bottom;
+	text-align: center;
+	font-size: 1.5em;
+	border-radius: 15px;
+	background-color: white;
+	margin: 0 30px;
+	background-repeat: no-repeat;
+}
+.nonspec li {
+	padding-bottom: 0;
+}
+.specificity .id {
+	background-image:url(../CSS-Workshop/img/shark.gif);
+}
+.specificity .class {
+	background-image:url(../CSS-Workshop/img/fish.png);	
+}
+.specificity .element {
+	background-image:url(../CSS-Workshop/img/plankton.png);	
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.textmask, h1, a{
 
+    background: 
+        -webkit-linear-gradient(left, rgba(0,0,0,0.2) 50%, transparent 50%),
+        -webkit-linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
+        -webkit-linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
+        -webkit-linear-gradient(left, transparent 50%, rgba(0,0,0,0.2) 50%),
+        -webkit-linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
+        -webkit-linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
+        -webkit-linear-gradient(left,
+        red 14%, orange 15%, orange 28%, yellow 29%, yellow 42%, green 43%, green 56%, blue 57%, blue 70%, magenta 71%, magenta 85%, purple 86%), white;
+    -webkit-background-size: 1px 50%, 1px 50px, 32px, 120px, 80px, 70px, 500px;
+    
+-webkit-background-clip: text,text,text,text,text,text,text,text, border;
+color: rgba(0,0,0,0);
+    }
+a {text-shadow: 1px 1px 1px rgba(0,0,0,0.4), -1px -1px 1px rgba(255,255,255, 0.5);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.4), -1px -1px 1px rgba(255,255,255, 0.5);
+	border-radius: 3px; padding: 3px 5px;
+	}	
+}
 @media print {
 	.slide {
 		page-break-inside: avoid;
@@ -412,7 +460,22 @@ div.example {
 	#presentation-counter, #info, #topinfo, .counter {
 		display: none
 	}
-	
+}
+
+@media only screen and (orientation: portrait) {
+	#presentation{
+	  background: indianred;
+	}
+}
+@media only screen and (max-width: 480px) {
+	#presentation{
+	  background: palegoldenrod;
+	}
+}
+#presentation {
+	-webkit-transition: all 1.5s linear;
+	transition: all 1.5s linear;	
+}
 </style>
 </head> 
 
@@ -431,9 +494,9 @@ div.example {
    
  <div class="slide intro">
      <header><hgroup> 
-      <h1><span class="textmask">Select This!</span><br> CSS Selectors</h1> 
+      <h1><span class="textmask">CSS: From Good to Great</span></h1> 
      </hgroup></header>
-     <p><a href="http://estelle.github.com/selectors/" style="color: #000">http://estelle.github.com/selectors/</a></p>
+     <p><a href="http://estelle.github.com/oscon2012/">http://estelle.github.com/oscon2012/</a></p>
     </div> 
     
     <div class="slide normal"> 
@@ -447,12 +510,11 @@ div.example {
 </section>
 </div> 
  
-<div class="slide normal"> 
-<header><h1>Who are you?</h1></header> 
-<section class="content"> 
-<pre contenteditable></pre>
-</section>
-</div>
+ <div class="slide intro">
+     <header><hgroup> 
+      <h1><span class="textmask">Who are you?</span></h1> 
+     </hgroup></header>
+  </div>
   
  <div class="slide normal"> 
     <header><h1>How this slide deck works</h1></header> 
@@ -476,39 +538,604 @@ div.example {
             <li>Media Queries</li>
         </ul>
      
-     <li>The Task at Hand</li>
-     <li></li>
-     <li></li>
-     <li></li>
+     	<li>Make a Slide Deck
+     		<ul>
+            	<li>border radius</li>
+     			<li>shadows</li>
+     			<li>gradients</li>
+     			<li>transitions</li>
+                <li>Transforms</li>
+     		</ul>
+     	</li>
+        <p>We don't have time to cover everything, but restources are available to dive deeper</p> 
      </ul>
      
      </section>
  </div>
 
- 
+
+  <div class="slide intro">
+     <header><hgroup> 
+      <h1><span class="textmask">Selectors</span></h1> 
+     </hgroup></header>
+     <p><a href="http://estelle.github.com/selectors/">http://estelle.github.com/selectors/</a></p>
+    </div> 
   
+
+ <div class="slide intro">
+     <header><hgroup> 
+      <h1><span class="textmask">Specificity</span></h1> 
+     </hgroup></header>
+       </div> 
+    
+    
+    <!-- Specificity -->
 <div class="slide normal"> 
-<header><h1>Viewers can take notes</h1></header> 
-<section class="content"> 
-<pre contenteditable>Click on the #4 to show some notes stored with local storage</pre>
+     <header><h1>Understanding Specificity</h1></header> 
+     <section class="content"> 
+     <ul class="specificity">
+     	<li class="id">ID</li>
+        <li class="class">Class</li>
+        <li class="element">Element</li>
+     </ul>
+     <ul class="specificity nonspec">
+     	<li>1-0-0</li>
+        <li>0-1-0</li>
+        <li>0-0-1</li>
+     </ul>
+     <p><a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" target="_blank">PDF</a><br>
+     <a href="../CSS-Workshop/files/11_specificity.html" target="play">Examples</a></p>
+     </section>
+ </div> 
+
+<!-- Specificity PDF --> 
+<div class="slide" style="padding: 0;"> 
+     <object data="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" style="width:100%; height:100%; overflow:scroll"></object>
+</div>
+
+<!-- Specificity Notes -->
+<div class="slide normal"> 
+     <header><h1>Specificity: The less than obvious</h1></header> 
+     <section class="content">
+ <p>The * selector, or global selector, has no value.</p>
+ <pre contenteditable>* {} 0-0-0 </pre>
+
+<p>Combinators, like ~, >, and + have no value</p>
+<pre contenteditable>ul li {} 0-0-2
+ul > li {} 0-0-2</pre>
+
+<p>:not has no value, but parameter selector does</p>
+<pre contenteditable>.myClass:not(p) {} 0-1-1</pre>
+
+<p>Specificity is not inheritance</p>
+     </section>
+</div>
+    
+     <div class="slide intro">
+     <header><hgroup> 
+      <h1><span class="textmask">Media Queries</span></h1> 
+     </hgroup></header>
+    </div> 
+  
+  <!-- media queries: browser support -->
+ <div class="slide normal">
+	<header><h1>media queries</h1></header>
+    <section class="content">
+    <pre contenteditable>&lt;link rel='stylesheet' type='text/css' 
+    <b>media='screen'</b> href='css/styles.css' /&gt;
+
+&lt;link rel='stylesheet' type='text/css' 
+    <b>media='print'</b> href='css/print.css' /&gt;</pre>
+  <pre contenteditable><b>@media screen {</b>
+  p {
+    color: blue;
+  }
+<b>}
+
+@media print</b> {
+  p {
+    color: red;
+  }
+<b>}</b>
+  </pre>
+  <!--
+<ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox</li>
+         <li class="opera">Opera</li>
+         <li class="ie">IE 5</li>
+     </ul> -->
+    </section>
+</div> 
+
+<!-- media queries: v 2.1 -->
+<div class="slide normal">
+	<header><h1>10 Media Queries (2.1)</h1></header>
+    <section class="content">
+    <ol style="float:left; margin-right: 20px;">
+    <li>all</li>
+    <li>aural</li>
+    <li>handheld</li>
+    <li>braille</li>
+    <li>embossed</li>
+    <li>print</li>
+    <li>projection</li>
+    <li>screen</li>
+    <li>tty</li>
+    <li>tv</li>
+    </ol>
+    <div style="float:left">
+<pre contenteditable>
+&lt;link media="screen" ...
+</pre>
+<pre contenteditable>
+&lt;style&gt; @import "myCSS.css"; ...
+</pre>
+<pre contenteditable>
+@import url(myCSS.css) screen; IE8+
+</pre>
+<pre contenteditable>
+@media screen {}
+</pre>
+<pre contenteditable>
+&lt;?xml-stylesheet media="screen" ...
+</pre> 
+    </div>
+    </section>
+</div>  
+
+<!-- media queries: browser support -->
+ <div class="slide normal">
+	<header><h1>media queries</h1></header>
+    <section class="content">
+    <pre contenteditable>&lt;link rel='stylesheet' 
+<b>media='screen and (min-width: 320px) and (max-width: 480px)'</b><br/>href='css/smartphone.css' /&gt;</pre>
+  <pre contenteditable><b>@media screen and (max-width: 480px)</b>{
+  a {
+    transition: background-color 200ms linear 50ms;
+  }
+<b>}
+
+@media screen and (orientation: landscape)</b> {
+  a[href^="mailto:]:before {
+    content: url(icons/email.gif);
+  }
+<b>}</b>
+  </pre>
+  <!--
+<ul class="icons">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari 3.5</li>
+         <li class="firefox">Firefox 3.5</li>
+         <li class="opera">Opera 9.5</li>
+        <li class="ie new">IE 9</li>
+     </ul> -->
+    </section>
+</div> 
+
+
+
+<!-- media queries: v 3 -->
+<div class="slide normal">
+<section class="content"><ul>
+<li><em>(min/max)-width:</em> viewport width</li>
+<li><em>(min/max)-height:</em> viewport height</li>
+<li><em>(min/max)-device-width:</em> screen width</li>
+<li><em>(min/max)-device-height:</em> screen height</li>
+<li><em>orientation:</em> portrait(h>w) | landscape(w>h)</li>
+<li><em>(min/max)-aspect-ratio:</em> width/height</li>
+<li><em>(min/max)-device-aspect-ratio:</em> device-width/height</li>
+</ul>
 </section>
+<ul style="margin:-20px 20px; opacity: 0.3">
+<li><em>(min/max)-color:</em> </li>
+<li><em>(min/max)-color-index:</em> </li>
+<li><em>(min/max)-monochrome:</em> 0 | 1+</li>
+<li><em>(min/max)-resolution:</em> 72dpi | 100dpcm</li>
+<li><em>scan:</em> progressive | interlace (tv) </li>
+<li><em>grid:</em> 0 | 1 (grids (like tty) or bitmap)</li>
+<li>See <a href="http://www.w3.org/TR/css3-mediaqueries/#media1">Media Queries Spec</a></li>
+</ul>
+
+</div>
+
+<!-- media queries: tidbits -->
+<div class="slide">
+	<header><h1>More Media Query Tidbits</h1></header>
+    <section class="content">
+    <pre contenteditable>media="<b>only</b> print and (color)"
+
+media="only screen <b>and</b> (orientation: portrait)"
+
+media="<b>not</b> screen and (color)"
+
+media="print<b>,</b> screen and (min-width: 480px)"</pre> 
+    
+    <pre contenteditable>@media screen and (<b>-webkit-min-device-pixel-ratio</b>: 2) {
+ .iphone4 { /* high DPI */}
+}
+@screen and (<b>transform-3d</b>) {
+  .transforms {}
+}</pre>
+<p>Also works with <code>(animation)</code> and <code>(transition)</code></p>
+    </section>
+</div> 
+
+<!-- media queries: Slide deck example -->
+<div class="slide" id="mediaqueryeffect">
+      <header>
+         <h1>Play with presentation window size
+         </h1>
+      </header>
+      <section class="content">
+      
+<pre contenteditable>#presentation {
+	-&lt;prefix&gt;-transition: all 1.5s linear;	
+}
+@media only screen and (orientation: portrait) {
+	#presentation{
+	  background: indianred;
+	}
+}
+@media only screen and (max-width: 480px) {
+	#presentation {
+	  background: palegoldenrod;
+	}
+}</pre>
+
+ <p><small>shrink this window to see the presentation change colors</small></p>
+      </section>
+  </div> 
+  
+<!-- mediaqueri.es -->
+ <div class="slide object"> 
+<object data="http://mediaqueri.es/"> 
+     </object><a href="http://mediaqueri.es/" class="objectlink">MediaQueri.es</a> 
 </div> 
  
-  
+
 <div class="slide normal"> 
-<header><h1>You can show lines of text over time</h1></header> 
+     <header><h1>Portrait v. Landscape</h1></header> 
+     <section class="content">
+     <p>Forcing portrait mode</p>
+<pre>@media only screen and (max-device-width: 480px) and (orientation: landscape){
+    #containerDiv{
+       -webkit-transform:rotate(-90deg);
+       -webkit-transform-origin: 160px 160px;
+       }
+    }</pre>
+<p>Forcing Landscape Mode</p>
+<pre contenteditable>@media only screen and (max-device-width: 480px) and (orientation: portrait){
+    #containerDiv{
+       -webkit-transform:rotate(90deg) scale(1.45);
+       -webkit-transform-origin: 230px 230px;
+       }
+    }</pre>   
+     </section>
+ </div>
+ 
+ 
+ <div class="slide normal"> 
+     <header><h1>JS Orientation Detection</h1></header> 
+     <section class="content">
+     <pre contenteditable>switch(window.orientation){
+   case 0:
+       //handle portrait actions
+       //document.getElementsByTagName('body')[0].className = 'portrait';
+       break;
+  case -90:
+  case 90:
+       // handle landscape actions
+       //document.getElementsByTagName('body')[0].className = 'landscape';
+       break;
+} //end switch</pre>
+<p>Event</p>
+<pre contenteditable>onOrientationChange</pre> 
+     </section>
+     </div>
+ 
+ 
+  
+   <!-- slide -->
+   <div class="slide normal"> 
+     <header>
+     	<h1>We're going to Make a Slide Deck</h1>
+        <h2>Because CSS is Awesome</h2>
+     </header> 
+     <section> 
+     <p><a href="solution.html" target="_blank">The deck we're making</a></p>
+     </section>
+   </div>
+   
+   
+      <!-- slide -->
+   <div class="slide normal"> 
+     <header><h1>The HTML</h1></header> 
+     <section>
+     <pre contenteditable>&lt;div id=&quot;<strong>presentation</strong>&quot;&gt;
+&lt;div id=&quot;<strong>slides</strong>&quot;&gt;
+ &lt;!-- slide --&gt;
+  &lt;div class=&quot;<strong>slide</strong> <i><strong>normal</strong></i>&quot;&gt; 
+    &lt;header&gt;&lt;h1&gt;Slide Header&lt;/h1&gt;&lt;/header&gt;
+    &lt;section&gt;
+      &lt;pre contenteditable&gt;some code&lt;/pre&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;prefixfree.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;slides.js&quot;&gt;&lt;/script&gt;</pre>
+     </section>
+   </div>
+   
+
+<div class="slide normal"> 
+<header><h1>Give the slide deck breathing room</h1></header> 
 <section class="content"> 
-<pre contenteditable>Click on the #2 to show more text</pre>
-<p class="temphidden">This used to be hidden</p>
-<p class="temphidden">This was also hidden</p>
-<p class="temphidden">This too</p>
-<p class="temphidden">and so was this</p>
+<pre contenteditable>body,
+#presentation {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px; 
+  top: 0px;
+}
+
+#presentation {
+  overflow: hidden;
+}
+</pre>
 </section>
 </div> 
  
   
 
+
+
+<div class="slide normal"> 
+<header><h1>Center the slide on the page</h1></header> 
+<section class="content"> 
+<pre contenteditable>.slide {
+  width: 900px;
+  height: 700px;
+  background-color: #efefef; }</pre>
+<p>Refresh</p>
+<pre contenteditable>.slide {
+  position: absolute;
+  left: 50%;
+  top: 50%;}</pre>
     
+<p>Refresh</p>
+ </section>
+   </div>
+   
+
+<div class="slide normal"> 
+<header><h1>Center the slide on the page</h1></header> 
+<section class="content"> 
+<pre contenteditable>.slide {
+    margin-top: -350px;
+    margin-left: -450px;
+}</pre>
+<p>Refresh</p>
+ </section>
+   </div>
+   
+
+<div class="slide normal"> 
+<header><h1>sooooo ugly</h1>
+<p>add some prettiness and refresh again</p>
+<pre contenteditable>.slide {
+    padding: 20px;
+} 
+body {
+    font-family: sans-serif;
+}</pre>
+</section>
+</div> 
+
+
+ <div class="slide normal"> 
+<header><h1>Slide location (class set with JS)</h1></header> 
+<section class="content"> 
+<pre contenteditable>
+.slide {
+  display: none; 
+  overflow: hidden;
+}
+.past, .current, .future {
+  display: block;   
+}
+.slide.past    { margin-left: -1400px;}
+.slide.current { margin-left: -450px;}
+.slide.future  { margin-left: 500px;}
+</pre>
+</section>
+</div> 
+ 
+ <div class="slide normal"> 
+<header><h1>Refresh</h1></header> 
+<section class="content"> <p>The slide deck now works, but it's ugly, and the transitions suck!</p>
+</section>
+</div> 
+ 
+ 
+<div class="slide normal"> 
+<header><h1>Rounded Corners</h1></header> 
+<section class="content">
+<p>Border Properties: <a href="http://estelle.github.com/html5mobile/part_08_backgrounds.html#slide27" target="lesson">border-radius</a> </p>
+<pre contenteditable>.slide {
+	border-radius: 50px;
+}</pre>
+<p>Can we use selectors to give different slides different corners?</p>
+</section>
+</div>
+
+<div class="slide normal"> 
+<header><h1>Rounded corners</h1></header> 
+<section class="content"> 
+<pre contenteditable>
+.slide {
+	border-radius: 50px 0;
+}
+.slide:nth-of-type(odd) {
+	border-radius: 0 50px;
+}
+</pre>
+</section>
+</div> 
+
+<div class="slide normal"> 
+<header><h1>Spiffier Borders with Shadows</h1></header> 
+<section class="content"> 
+<pre contenteditable>
+#presentation {
+  background-color: #000;  
+}
+</pre>
+
+<p><a href="http://estelle.github.com/html5mobile/part_07_fonts.html#slide8" target="lesson">Shadows</a>: <a href="http://estelle.github.com/html5mobile/part_07_fonts.html#slide13" target="lesson">box-shadows</a></p>
+<pre contenteditable>
+.slide {
+  border: 5px solid #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6), 
+              inset 0 0 6px rgba(0,0,0,0.4);
+}</pre>
+</section>
+</div>
+
+<div class="slide normal"> 
+<header><h1>Box Model Gotcha!</h1></header> 
+<section class="content">
+<p><a href="http://estelle.github.com/html5mobile/part_12_features.html#slide4">Box Sizing</a></p> 
+<pre contenteditable>
+.slide {
+  box-sizing: border-box;   
+}</pre>
+</section>
+</div>
+
+<div class="slide normal"> 
+<header><h1>Default font sizes?</h1></header> 
+<section class="content">
+<p>Font-size: <a href="http://estelle.github.com/html5mobile/part_12_features.html#slide14">rem units</a></p>
+<pre contenteditable>
+:root { font-size: 162.5%;  }
+
+h1    { font-size:1.8rem;   }
+
+pre   { font-size: 1.5rem;  }
+ 
+p     { font-size: 1.5rem;
+        margin: 1rem 0 0 0; }
+</pre>
+</section>
+</div> 
+
+<div class="slide normal"> 
+<header><h1>Boring Background?</h1></header> 
+<section class="content">
+<p><a href="http://estelle.github.com/gradients" class="lesson">Gradients</a> 
+<pre contenteditable>
+#presentation {
+  background-image: 
+    linear-gradient(#b8c6df,#6d88b7);
+  background-image: 
+    linear-gradient(to bottom, 
+                    #b8c6df 0%,
+                    #6d88b7 100%);
+}
+</pre>
+</section>
+</div> 
+
+
+<div class="slide normal"> 
+<section class="content"> 
+<pre contenteditable style="font-size:1rem"><strong>background-image: </strong>
+ linear-gradient(left, rgba(0,0,0,0.2) 50%, transparent 50%),
+ linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
+ linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
+ linear-gradient(left, transparent 50%, rgba(0,0,0,0.2) 50%),
+ linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
+ linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
+ linear-gradient(left, transparent 50%, rgba(0,0,0,0.2) 50%),
+ linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
+ linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
+ linear-gradient(left,
+      red 14%, 
+      orange 15%, orange 28%, 
+      yellow 29%, yellow 42%, 
+      green 43%, green 56%, 
+      blue 57%, blue 70%, 
+      magenta 71%, magenta 85%, 
+      purple 86%);
+ <strong>background-size: </strong>
+      1px 50%, 
+      1px 50px, 
+      32px, 120px, 
+      80px, 60px, 
+      90px, 110px, 
+      70px, 500px;
+}</pre>
+</section>
+</div> 
+ 
+  
+
+ 
+  
+<div class="slide normal"> 
+<header><h1>Sexier slide transitions</h1></header> 
+<section class="content">
+<p><a href="http://estelle.github.com/html5mobile/part_11_animations.html#slide2">Transition</a> properties</p> 
+<pre contenteditable>.slides {transition: 1s;}</pre>
+<pre contenteditable>
+.slide            {opacity: 0.5;}
+.slide.far-past   {margin-left: -2400px;}
+.slide.past       {margin-left: -1400px;}
+.slide.current    {margin-left: -450px; 
+                   opacity: 1;}
+.slide.future     {margin-left: 500px;}
+.slide.far-future {margin-left: 1500px;}
+</pre>
+<pre contenteditable>.slides {transition: margin-left 1s, 
+         opacity 2s;}</pre>
+</section>
+</div> 
+
+
+<div class="slide normal"> 
+<header><h1>Transforms</h1></header> 
+<section class="content">
+<p><a href="http://estelle.github.com/html5mobile/part_10_transforms.html#slide2" target="lesson">Transforms</a></p> 
+<pre contenteditable>.slide {transform: scale(0.8);
+       transition: 
+          margin-left 1s, 
+          transform 1s,
+          opacity 2s;}</pre>
+<pre contenteditable>.slide.current    {transform: scale(1);}
+</pre>
+<pre contenteditable>.slide {transition: all 1.2s linear;}</pre>
+</section>
+</div> 
+
+
+ 
+  
+
+ 
+  
+ 
+ 
+  
+
+ 
+      
 
    
 
