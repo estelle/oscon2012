@@ -298,9 +298,9 @@ body,
 	box-shadow: 0 0 20px rgba(0,0,0,0.6), 
 				inset 0 0 6px rgba(0,0,0,0.4);
     display: none;
-	transition: margin-left 1s, opacity 2s;
+	transition: margin-left 1s, transform 1s, opacity 2s;
 	opacity: 0.5; 
-	
+	transform: scale(0.8);
   box-sizing: border-box;  
 }
 .slide:nth-of-type(odd) {
@@ -313,7 +313,8 @@ body,
 
 .slide.far-past {margin-left: -2400px;}
 .slide.past     {margin-left: -1400px;}
-.slide.current  {margin-left: -450px; opacity:1}
+.slide.current  {margin-left: -450px; opacity:1; 
+	transform: scale(1);}
 .slide.future   {margin-left: 500px;}
 .slide.far-future {margin-left: 1500px;}
 :root {font-size: 162.5%;}
@@ -611,21 +612,19 @@ p     { font-size: 1.5rem;
 <div class="slide normal"> 
 <header><h1>Transforms</h1></header> 
 <section class="content">
-<p><a href="http://estelle.github.com/html5mobile/part_10_transforms.html#slide2" target="lesson">Transforms</a> and <a href="http://estelle.github.com/html5mobile/part_11_animations.html#slide2">transition</a> properties</p> 
-<pre contenteditable>.slides {transition: 1s;}</pre>
-<pre contenteditable>
-.slide            {opacity: 0.5;}
-.slide.far-past   {margin-left: -2400px;}
-.slide.past       {margin-left: -1400px;}
-.slide.current    {margin-left: -450px; 
-                   opacity: 1;}
-.slide.future     {margin-left: 500px;}
-.slide.far-future {margin-left: 1500px;}
+<p><a href="http://estelle.github.com/html5mobile/part_10_transforms.html#slide2" target="lesson">Transforms</a></p> 
+<pre contenteditable>.slide {transform: scale(0.8);
+       transition: 
+          margin-left 1s, 
+          transform 1s,
+          opacity 2s;}</pre>
+<pre contenteditable>.slide.current    {transform: scale(1);}
 </pre>
-<pre contenteditable>.slides {transition: margin-left 1s, 
-         opacity 2s;}</pre>
+<pre contenteditable>.slide {transition: all 1.2s linear;}</pre>
 </section>
 </div> 
+
+
  
   
 
