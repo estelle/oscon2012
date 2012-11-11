@@ -72,6 +72,22 @@ body,
 .slide.current  {margin-left: -450px;}
 .slide.future   {margin-left: 500px;}
 pre {background-color: #fff;}
+
+.slide            {opacity: 0.5;}
+.slide.far-past   {margin-left: -2400px;}
+.slide.past       {margin-left: -1400px;}
+.slide.current    {margin-left: -450px; 
+                   opacity: 1;}
+.slide.future     {margin-left: 500px;}
+.slide.far-future {margin-left: 1500px;}
+
+.slide {transform: scale(0.8);
+       transition: 
+          margin-left 1s, 
+          transform 1s,
+          opacity 2s;}
+          .slide.current    {transform: scale(1);}
+          .slide {transition: all 1.2s linear;}
 </style>
 </head>
 
